@@ -18,7 +18,7 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
     var movingImageView: UIImageView!
     var fadeTransition: FadeTransition!
     // End the transition with the image at the right size:
-    var endTransition: CGRect!
+    // var endTransition: CGRect!
     
     var imageTransition: ImageTransition!
     
@@ -55,12 +55,12 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
         var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
-        movingImageView = UIImageView(frame: selectedImageView.frame)
-        movingImageView.image = selectedImageView.image
-        movingImageView.contentMode = selectedImageView.contentMode
-        movingImageView.clipsToBounds = selectedImageView.clipsToBounds
+          movingImageView = UIImageView(frame: selectedImageView.frame)
+          movingImageView.image = selectedImageView.image
+          movingImageView.contentMode = selectedImageView.contentMode
+          movingImageView.clipsToBounds = selectedImageView.clipsToBounds
         
-        endTransition = CGRect(x: 0, y: (568 - self.selectedImageView.frame.height)/2, width: 320, height: (self.selectedImageView.frame.height*320)/self.selectedImageView.frame.width)
+        var endTransition = CGRect(x: 0, y: (568 - self.selectedImageView.frame.height)/2, width: 320, height: (self.selectedImageView.frame.height*320)/self.selectedImageView.frame.width)
 
         var window = UIApplication.sharedApplication().keyWindow!
         window.addSubview(movingImageView)
@@ -72,7 +72,7 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
             var finalImageView = photoViewController.imageView
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 toViewController.view.alpha = 1
-                self.movingImageView.frame = self.endTransition
+               // self.movingImageView.frame = self.endTransition
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
             }
