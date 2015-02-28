@@ -14,7 +14,8 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var feedImageView: UIImageView!
-    var selectedImage: UIImage!
+    var selectedImageView: UIImageView!
+    var movingImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +49,14 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
         var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         
+        movingImageView = UIImageView(frame: selectedImageView.frame)
+        movingImageView.image = selectedImageView.image
+        movingImageView.contentMode = selectedImageView.contentMode
+        movingImageView.clipsToBounds = selectedImageView.clipsToBounds
+
+        var window = UIApplication.sharedApplication().keyWindow!
+        window.addSubview(movingImageView)
+        
         if (isPresenting) {
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
@@ -68,14 +77,14 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationVC = segue.destinationViewController as PhotoViewController
-        destinationVC.image = selectedImage
+        destinationVC.image = selectedImageView.image
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = self
     }
     
     @IBAction func onTap(sender: UITapGestureRecognizer) {
         var imageView = sender.view as UIImageView
-        selectedImage = imageView.image
+        selectedImageView = imageView
         performSegueWithIdentifier("photoSegue", sender: self)
     }
     /*

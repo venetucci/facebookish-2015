@@ -20,14 +20,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1438"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding1" id="goR-1z-Kgd">
-                                        <rect key="frame" x="3" y="82" width="158" height="155"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="ubV-7h-Mht" appends="YES" id="cx4-Hd-k4B"/>
-                                        </connections>
-                                    </imageView>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding2" id="1qZ-DL-XID">
                                         <rect key="frame" x="4" y="241" width="157" height="154"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -60,6 +52,21 @@
                                             <outletCollection property="gestureRecognizers" destination="fPM-Hv-JMr" appends="YES" id="OjE-vQ-o15"/>
                                         </connections>
                                     </imageView>
+                                    <view contentMode="scaleAspectFit" id="BcX-PC-zwk">
+                                        <rect key="frame" x="4" y="82" width="157" height="158"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding1" id="goR-1z-Kgd">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="155"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="ubV-7h-Mht" appends="YES" id="cx4-Hd-k4B"/>
+                                                </connections>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                             </scrollView>
                         </subviews>
