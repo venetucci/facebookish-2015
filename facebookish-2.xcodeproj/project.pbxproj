@@ -15,6 +15,9 @@
 		106D1C491AA1067E002A09CC /* facebookish_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D1C481AA1067E002A09CC /* facebookish_2Tests.swift */; };
 		106D1C531AA10A1B002A09CC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D1C521AA10A1B002A09CC /* FeedViewController.swift */; };
 		106D1C551AA14396002A09CC /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D1C541AA14396002A09CC /* PhotoViewController.swift */; };
+		10C50F701AA25F4100B068B7 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C50F6E1AA25F4100B068B7 /* BaseTransition.swift */; };
+		10C50F711AA25F4100B068B7 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C50F6F1AA25F4100B068B7 /* FadeTransition.swift */; };
+		10C50F731AA260FF00B068B7 /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C50F721AA260FF00B068B7 /* ImageTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		106D1C481AA1067E002A09CC /* facebookish_2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = facebookish_2Tests.swift; sourceTree = "<group>"; };
 		106D1C521AA10A1B002A09CC /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		106D1C541AA14396002A09CC /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		10C50F6E1AA25F4100B068B7 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
+		10C50F6F1AA25F4100B068B7 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		10C50F721AA260FF00B068B7 /* ImageTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		106D1C2F1AA1067E002A09CC /* facebookish-2 */ = {
 			isa = PBXGroup;
 			children = (
+				10C50F6D1AA25F2400B068B7 /* transitions */,
 				106D1C321AA1067E002A09CC /* AppDelegate.swift */,
 				106D1C341AA1067E002A09CC /* ViewController.swift */,
 				106D1C361AA1067E002A09CC /* Main.storyboard */,
@@ -116,6 +123,16 @@
 				106D1C471AA1067E002A09CC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		10C50F6D1AA25F2400B068B7 /* transitions */ = {
+			isa = PBXGroup;
+			children = (
+				10C50F6E1AA25F4100B068B7 /* BaseTransition.swift */,
+				10C50F6F1AA25F4100B068B7 /* FadeTransition.swift */,
+				10C50F721AA260FF00B068B7 /* ImageTransition.swift */,
+			);
+			name = transitions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +236,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				106D1C351AA1067E002A09CC /* ViewController.swift in Sources */,
+				10C50F731AA260FF00B068B7 /* ImageTransition.swift in Sources */,
+				10C50F701AA25F4100B068B7 /* BaseTransition.swift in Sources */,
 				106D1C551AA14396002A09CC /* PhotoViewController.swift in Sources */,
 				106D1C531AA10A1B002A09CC /* FeedViewController.swift in Sources */,
+				10C50F711AA25F4100B068B7 /* FadeTransition.swift in Sources */,
 				106D1C331AA1067E002A09CC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +433,7 @@
 				106D1C4E1AA1067E002A09CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		106D1C4F1AA1067E002A09CC /* Build configuration list for PBXNativeTarget "facebookish-2Tests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +442,7 @@
 				106D1C511AA1067E002A09CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

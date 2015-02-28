@@ -16,6 +16,12 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
     @IBOutlet weak var feedImageView: UIImageView!
     var selectedImageView: UIImageView!
     var movingImageView: UIImageView!
+    var fadeTransition: FadeTransition!
+    // End the transition with the image at the right size:
+    var endTransition: CGRect!
+    
+    var imageTransition: ImageTransition!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,6 +59,8 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
         movingImageView.image = selectedImageView.image
         movingImageView.contentMode = selectedImageView.contentMode
         movingImageView.clipsToBounds = selectedImageView.clipsToBounds
+        
+        endTransition = CGRect(x: 0, y: (568 - self.selectedImageView.frame.height)/2, width: 320, height: (self.selectedImageView.frame.height*320)/self.selectedImageView.frame.width)
 
         var window = UIApplication.sharedApplication().keyWindow!
         window.addSubview(movingImageView)
@@ -60,8 +68,11 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
         if (isPresenting) {
             containerView.addSubview(toViewController.view)
             toViewController.view.alpha = 0
+            var photoViewController = toViewController as PhotoViewController
+            var finalImageView = photoViewController.imageView
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 toViewController.view.alpha = 1
+                self.movingImageView.frame = finalImageView.frame
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
             }
@@ -80,6 +91,12 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
         destinationVC.image = selectedImageView.image
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = self
+        
+        imageTransition = ImageTransition()
+        imageTransition.duration = 3
+        
+        destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationVC.transitioningDelegate = imageTransition
     }
     
     @IBAction func onTap(sender: UITapGestureRecognizer) {
