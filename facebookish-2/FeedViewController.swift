@@ -72,7 +72,7 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
             var finalImageView = photoViewController.imageView
             UIView.animateWithDuration(0.4, animations: { () -> Void in
                 toViewController.view.alpha = 1
-                self.movingImageView.frame = finalImageView.frame
+                self.movingImageView.frame = self.endTransition
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
             }
@@ -89,8 +89,8 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationVC = segue.destinationViewController as PhotoViewController
         destinationVC.image = selectedImageView.image
-        destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
-        destinationVC.transitioningDelegate = self
+        //destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
+        //destinationVC.transitioningDelegate = self
         
         imageTransition = ImageTransition()
         imageTransition.duration = 3
