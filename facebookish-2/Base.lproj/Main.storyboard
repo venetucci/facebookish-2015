@@ -20,81 +20,46 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1438"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <view contentMode="scaleAspectFill" id="BcX-PC-zwk">
-                                        <rect key="frame" x="4" y="81" width="155" height="157"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding1" id="goR-1z-Kgd">
+                                        <rect key="frame" x="4" y="81" width="155" height="155"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding1" id="goR-1z-Kgd">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="155"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="ubV-7h-Mht" appends="YES" id="cx4-Hd-k4B"/>
-                                                </connections>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleAspectFill" id="gTk-84-dgh">
-                                        <rect key="frame" x="4" y="241" width="154" height="154"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ubV-7h-Mht" appends="YES" id="cx4-Hd-k4B"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding3" id="Uqg-q9-2hN">
+                                        <rect key="frame" x="163" y="81" width="157" height="106"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding2" id="1qZ-DL-XID">
-                                                <rect key="frame" x="0.0" y="0.0" width="157" height="154"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="mZV-o2-opt" appends="YES" id="z4J-bw-cXe"/>
-                                                </connections>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleAspectFill" id="xen-Tm-JI6">
-                                        <rect key="frame" x="162" y="81" width="157" height="106"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ImL-ol-hlt" appends="YES" id="M6Y-yp-6Cv"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding4" id="fim-5o-U8t">
+                                        <rect key="frame" x="163" y="189" width="157" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding3" id="Uqg-q9-2hN">
-                                                <rect key="frame" x="0.0" y="0.0" width="157" height="106"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="ImL-ol-hlt" appends="YES" id="M6Y-yp-6Cv"/>
-                                                </connections>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleAspectFill" id="YXU-dk-O92">
-                                        <rect key="frame" x="162" y="190" width="157" height="106"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="wkk-Z5-u7K" appends="YES" id="Mei-4o-ap7"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding5" id="P0B-qZ-J3O">
+                                        <rect key="frame" x="156" y="294" width="157" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding4" id="fim-5o-U8t">
-                                                <rect key="frame" x="0.0" y="0.0" width="157" height="104"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="wkk-Z5-u7K" appends="YES" id="Mei-4o-ap7"/>
-                                                </connections>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleAspectFill" id="sNM-9s-nWB">
-                                        <rect key="frame" x="162" y="296" width="157" height="106"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="fPM-Hv-JMr" appends="YES" id="OjE-vQ-o15"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding2" id="1qZ-DL-XID">
+                                        <rect key="frame" x="6" y="242" width="157" height="154"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding5" id="P0B-qZ-J3O">
-                                                <rect key="frame" x="0.0" y="0.0" width="157" height="104"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <gestureRecognizers/>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="fPM-Hv-JMr" appends="YES" id="OjE-vQ-o15"/>
-                                                </connections>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="mZV-o2-opt" appends="YES" id="z4J-bw-cXe"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>

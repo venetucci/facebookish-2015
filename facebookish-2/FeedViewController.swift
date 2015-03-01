@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+class FeedViewController: UIViewController {
     
     var isPresenting: Bool = true
 
@@ -34,66 +34,14 @@ class FeedViewController: UIViewController, UIViewControllerTransitioningDelegat
         // Dispose of any resources that can be recreated.
     }
     
-    func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
-        isPresenting = true
-        return self
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
-        isPresenting = false
-        return self
-    }
-    
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        // The value here should be the duration of the animations scheduled in the animationTransition method
-        return 0.4
-    }
-    
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        println("animating transition")
-        var containerView = transitionContext.containerView()
-        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
-        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-        
-          movingImageView = UIImageView(frame: selectedImageView.frame)
-          movingImageView.image = selectedImageView.image
-          movingImageView.contentMode = selectedImageView.contentMode
-          movingImageView.clipsToBounds = selectedImageView.clipsToBounds
-        
-        var endTransition = CGRect(x: 0, y: (568 - self.selectedImageView.frame.height)/2, width: 320, height: (self.selectedImageView.frame.height*320)/self.selectedImageView.frame.width)
-
-        var window = UIApplication.sharedApplication().keyWindow!
-        window.addSubview(movingImageView)
-        
-        if (isPresenting) {
-            containerView.addSubview(toViewController.view)
-            toViewController.view.alpha = 0
-            var photoViewController = toViewController as PhotoViewController
-            var finalImageView = photoViewController.imageView
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-                toViewController.view.alpha = 1
-               // self.movingImageView.frame = self.endTransition
-                }) { (finished: Bool) -> Void in
-                    transitionContext.completeTransition(true)
-            }
-        } else {
-            UIView.animateWithDuration(0.4, animations: { () -> Void in
-                fromViewController.view.alpha = 0
-                }) { (finished: Bool) -> Void in
-                    transitionContext.completeTransition(true)
-                    fromViewController.view.removeFromSuperview()
-            }
-        }
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationVC = segue.destinationViewController as PhotoViewController
         destinationVC.image = selectedImageView.image
-        //destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
-        //destinationVC.transitioningDelegate = self
+        // destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
+        // destinationVC.transitioningDelegate = self
         
         imageTransition = ImageTransition()
-        imageTransition.duration = 3
+        imageTransition.duration = 2
         
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = imageTransition
