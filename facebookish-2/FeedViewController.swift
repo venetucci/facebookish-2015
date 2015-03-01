@@ -44,7 +44,7 @@ class FeedViewController: UIViewController {
         
         
         imageTransition = ImageTransition()
-        imageTransition.duration = 2
+        imageTransition.duration = 0.5
         imageTransition.endTransition = endTransition
         
 

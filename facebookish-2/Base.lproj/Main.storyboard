@@ -45,7 +45,7 @@
                                         </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wedding5" id="P0B-qZ-J3O">
-                                        <rect key="frame" x="156" y="294" width="157" height="104"/>
+                                        <rect key="frame" x="162" y="294" width="151" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
