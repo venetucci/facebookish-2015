@@ -35,6 +35,7 @@ class PhotoViewController: UIViewController {
     */
     @IBAction func didPressDoneButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+        
     }
 
 }

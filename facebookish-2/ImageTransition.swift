@@ -41,11 +41,28 @@ class ImageTransition: BaseTransition {
     
     override func dismissTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
         
+        var feedViewController = toViewController as FeedViewController
+        // feedViewController.selectedImageView.hidden = true
+        
+        var photoViewController = fromViewController as PhotoViewController
+        // photoViewController.imageView.hidden = true
+        
+        var movingImageView = UIImageView(image: photoViewController.imageView.image)
+        movingImageView.frame = photoViewController.imageView.frame
+        movingImageView.contentMode = photoViewController.imageView.contentMode
+        movingImageView.clipsToBounds = photoViewController.imageView.clipsToBounds
+        containerView.addSubview(movingImageView)
+        
+        var frame = containerView.convertRect(feedViewController.selectedImageView.frame, fromView: feedViewController.scrollView)
+        
         fromViewController.view.alpha = 1
         UIView.animateWithDuration(duration, animations: {
             fromViewController.view.alpha = 0
+            movingImageView.frame = frame
             }) { (finished: Bool) -> Void in
                 self.finish()
+                movingImageView.removeFromSuperview()
+                fromViewController.view.removeFromSuperview()
         }
     }
 }
