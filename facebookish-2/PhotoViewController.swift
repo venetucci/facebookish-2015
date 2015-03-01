@@ -12,10 +12,13 @@ class PhotoViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     var image: UIImage!
+    var endTransition: CGRect!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         imageView.image = image
+        imageView.frame = endTransition
         // Do any additional setup after loading the view.
     }
 

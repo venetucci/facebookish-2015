@@ -26,12 +26,12 @@ class ImageTransition: BaseTransition {
         var frame = containerView.convertRect(feedViewController.selectedImageView.frame, fromView: feedViewController.scrollView)
         movingImageView.frame = frame
         
-        var endTransition = CGRect(x: 0, y: (photoViewController.imageView.frame.height - feedViewController.selectedImageView.frame.height)/2, width: 320, height: (feedViewController.selectedImageView.frame.height*320)/feedViewController.selectedImageView.frame.width)
+       
         
         toViewController.view.alpha = 0
         UIView.animateWithDuration(duration, animations: {
             toViewController.view.alpha = 1
-            movingImageView.frame = endTransition
+            movingImageView.frame = self.endTransition
         }) { (finished: Bool) -> Void in
             self.finish()
             photoViewController.imageView.hidden = false

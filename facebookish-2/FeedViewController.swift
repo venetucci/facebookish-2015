@@ -18,7 +18,7 @@ class FeedViewController: UIViewController {
     var movingImageView: UIImageView!
     var fadeTransition: FadeTransition!
     // End the transition with the image at the right size:
-    // var endTransition: CGRect!
+    var endTransition: CGRect!
     
     var imageTransition: ImageTransition!
     
@@ -39,12 +39,20 @@ class FeedViewController: UIViewController {
         destinationVC.image = selectedImageView.image
         // destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         // destinationVC.transitioningDelegate = self
+        var height = (selectedImageView.image!.size.height*320)/selectedImageView.image!.size.width
+        endTransition = CGRect(x: 0, y: (self.view.frame.size.height - height)/2, width: 320, height: height)
+        
         
         imageTransition = ImageTransition()
         imageTransition.duration = 2
+        imageTransition.endTransition = endTransition
+        
+
         
         destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
         destinationVC.transitioningDelegate = imageTransition
+        
+        destinationVC.endTransition = imageTransition.endTransition
     }
     
     @IBAction func onTap(sender: UITapGestureRecognizer) {
