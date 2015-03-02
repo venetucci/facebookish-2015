@@ -14,17 +14,20 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var doneButtonImage: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var blackView: UIView!
     var image: UIImage!
     var endTransition: CGRect!
+    let blackColor = UIColor(white: 0, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         scrollView.contentSize = imageView.frame.size
         scrollView.delegate = self
+        blackView.backgroundColor = blackColor
         imageView.image = image
         imageView.frame = endTransition
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,32 +42,23 @@ class PhotoViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView!) {
         var newImagePoint = imageView.frame.origin
+        var offsetFade = 1 - (scrollView.contentOffset.y / -60)
         
-        doneButtonImage.alpha = 1 - (scrollView.contentOffset.y / -60)
-        println("height: \(scrollView.contentOffset)")
-        
-        photoActionsImage.alpha = 1 - (scrollView.contentOffset.y / -60)
-        
-    }
-    
-    func scrollViewWillBeginDragging(scrollView: UIScrollView!) {
+        doneButtonImage.alpha = offsetFade
+        photoActionsImage.alpha = offsetFade
+        blackView.alpha = offsetFade
         
     }
     
     func scrollViewDidEndDragging(scrollView: UIScrollView!,
         willDecelerate decelerate: Bool) {
-        
-        println("height: \(scrollView.contentOffset)")
             
         if scrollView.contentOffset.y < -60 {
             dismissViewControllerAnimated(true, completion: nil)
             imageView.alpha = 0
             doneButtonImage.hidden = true
+            
         }
-    }
-    
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView!) {
-        // This method is called when the scrollview finally stops scrolling.
     }
 
 }
