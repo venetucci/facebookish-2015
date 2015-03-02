@@ -112,14 +112,20 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="wedding1" id="8Sg-g4-jUO">
-                                <rect key="frame" x="0.0" y="44" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="doneButton" id="KJq-rd-NHK">
                                 <rect key="frame" x="269" y="9" width="51" height="27"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" id="l1z-QO-hOl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="wedding1" id="8Sg-g4-jUO">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="frd-Wj-9Ue">
                                 <rect key="frame" x="269" y="8" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -127,14 +133,17 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didPressDoneButton:" destination="ghs-yk-yN6" eventType="touchUpInside" id="w1p-W4-QMM"/>
+                                    <action selector="didPressDoneButton:" destination="ghs-yk-yN6" eventType="touchUpInside" id="ZFy-mu-vV4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="doneButtonImage" destination="KJq-rd-NHK" id="oBh-sD-Y72"/>
                         <outlet property="imageView" destination="8Sg-g4-jUO" id="YZD-AS-ycO"/>
+                        <outlet property="photoActionsImage" destination="4dj-14-cxc" id="oMV-Jf-xvd"/>
+                        <outlet property="scrollView" destination="l1z-QO-hOl" id="UwK-lf-fR9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKV-IU-PdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
